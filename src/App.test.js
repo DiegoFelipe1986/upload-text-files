@@ -1,8 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-
-test('renders learn react link', () => {
+/*
+* testing title
+*/
+test('renders app tittle', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const title = screen.getByText(/Read and write .txt files/i);
+  expect(title).toBeInTheDocument();
+
 });
+/*
+* testing elements
+*/
+it('is able', () => {
+  render(<App />)
+  expect(screen.getByRole('textbox')).toBeInTheDocument();
+  expect(screen.getByRole('button')).toBeInTheDocument();
+})
